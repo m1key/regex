@@ -19,7 +19,6 @@ class Extractor
     numbers_not_within_params = @string.to_enum(:scan, /(\d+)(?![^<]*>)/).map { $1 }
     numbers_not_within_things = @string.to_enum(:scan, /(\d+)(?=([^"]*"[^"]*"[^"]*|[^"]*)*$)/).map { $1 }
     @numbers = numbers_not_within_params & numbers_not_within_things
-    #@numbers = numbers_not_within_things
   end
 
 end
